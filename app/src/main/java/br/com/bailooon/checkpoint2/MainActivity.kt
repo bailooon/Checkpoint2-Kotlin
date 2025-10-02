@@ -27,10 +27,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.bailooon.checkpoint2.components.GameCard
 import br.com.bailooon.checkpoint2.components.StudioCard
+import br.com.bailooon.checkpoint2.models.Game
 import br.com.bailooon.checkpoint2.repository.getAllGames
 import br.com.bailooon.checkpoint2.repository.getGamesByStudio
 import br.com.bailooon.checkpoint2.ui.theme.Checkpoint2Theme
@@ -89,5 +91,29 @@ fun GamesScreen(modifier: Modifier = Modifier) {
                 GameCard(game = it)
             }
         }
+    }
+}
+
+@Preview(showBackground = true, name = "Games Screen Preview")
+@Composable
+fun PreviewGamesScreen() {
+    Checkpoint2Theme {
+        GamesScreen()
+    }
+}
+
+@Preview(showBackground = true, name = "Studio Card Preview")
+@Composable
+fun PreviewStudioCard() {
+    Checkpoint2Theme {
+        StudioCard(game = Game(1, "Example Game", "Example Studio", 2023))
+    }
+}
+
+@Preview(showBackground = true, name = "Game Card Preview")
+@Composable
+fun PreviewGameCard() {
+    Checkpoint2Theme {
+        GameCard(game = Game(1, "Example Game", "Example Studio", 2023))
     }
 }

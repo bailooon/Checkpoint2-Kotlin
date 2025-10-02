@@ -13,9 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.bailooon.checkpoint2.models.Game
+import br.com.bailooon.checkpoint2.ui.theme.Checkpoint2Theme
 
 @Composable
 fun GameCard(game: Game) {
@@ -52,5 +54,13 @@ fun GameCard(game: Game) {
                 color = Color.Blue
             )
         }
+    }
+}
+
+@Preview(showBackground = true, name = "Game Card Preview")
+@Composable
+fun PreviewGameCard() {
+    Checkpoint2Theme {
+        GameCard(game = Game(1, "Example Game", "Example Studio", 2023))
     }
 }
