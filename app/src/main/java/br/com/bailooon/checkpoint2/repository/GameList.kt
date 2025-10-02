@@ -16,3 +16,9 @@ fun getAllGames(): List<Game> {
         Game(id = 10, title = "Gun Fight", studio = "Taito", releaseYear = 1975)
     )
 }
+
+fun getGamesByStudio(studio: String): List<Game> {
+    return getAllGames().filter {
+        it.studio.startsWith(prefix = studio, ignoreCase = true)
+    }
+}
