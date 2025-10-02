@@ -1,5 +1,6 @@
 package br.com.bailooon.checkpoint2.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,10 +17,11 @@ import br.com.bailooon.checkpoint2.models.Game
 import br.com.bailooon.checkpoint2.ui.theme.Checkpoint2Theme
 
 @Composable
-fun StudioCard(game: Game) {
+fun StudioCard(game: Game, onClick: (() -> Unit)? = null) {
     Card(modifier = Modifier
         .size(100.dp)
-        .padding(end = 4.dp)) {
+        .padding(end = 4.dp)
+        .clickable(enabled = onClick != null) { onClick?.invoke() }) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
